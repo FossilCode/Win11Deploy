@@ -15,6 +15,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v CortanaConsen
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\OneDrive" /f >nul
 
 REM Install software using winget
+winget source update --silent
 winget install Fastfetch --silent
 winget install Brave --silent
 winget install PowerShell --silent
