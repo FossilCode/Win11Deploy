@@ -1,4 +1,14 @@
 @ECHO OFF
+TITLE Windows Setup + Configuration Utility
+
+:: Ensure we're running elevated
+NET SESSION >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    ECHO This script must be run as Administrator.
+    ECHO Right-click the batch file and choose "Run as administrator".
+    PAUSE
+    EXIT /B 1
+)
 ECHO.
 ECHO     ______ ____  _____ _____  ____ __ 
 ECHO    / ____// __ \/ ___// ___/ /  _// / 

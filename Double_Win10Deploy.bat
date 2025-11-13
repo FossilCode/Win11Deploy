@@ -1,6 +1,15 @@
 @ECHO OFF
 TITLE Windows Setup + Configuration Utility
 
+:: Ensure we're running elevated
+NET SESSION >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    ECHO This script must be run as Administrator.
+    ECHO Right-click the batch file and choose "Run as administrator".
+    PAUSE
+    EXIT /B 1
+)
+
 ::------------------------------------------------------------
 ::  ASCII Banner + Intro
 ::------------------------------------------------------------
@@ -82,20 +91,20 @@ FOR %%A IN (
     PowerShell
     Audacity
     Valve.Steam
-    dotPDN.PaintDotNet
     VisualStudioCode
     OpenJS.NodeJS
     VideoLAN.VLC
     REALiX.HWiNFO
     Logitech.GHUB
     RiotGames.LeagueOfLegends.NA
-    Python.Python.3.13
+    Python.Python.3.14
     7zip
     Discord.Discord
     Notepad++
     SpaceSniffer
     EpicGamesLauncher
     EADesktop
+    Parsec.Parsec
 ) DO (
     ECHO Installing %%A...
     winget install %%A --accept-package-agreements --accept-source-agreements -h
