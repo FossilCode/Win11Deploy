@@ -1,5 +1,5 @@
 @ECHO OFF
-ECHO.
+ECHO testing Fossil_Win11Deploy.bat
 ECHO     ______ ____  _____ _____  ____ __ 
 ECHO    / ____// __ \/ ___// ___/ /  _// / 
 ECHO   / /_   / / / /\__ \ \__ \  / / / /  
