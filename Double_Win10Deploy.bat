@@ -107,7 +107,7 @@ FOR %%A IN (
     Parsec.Parsec
 ) DO (
     ECHO Installing %%A...
-    winget install %%A --accept-package-agreements --accept-source-agreements -h
+    winget install %%A --accept-package-agreements --accept-source-agreements --scope machine -h
 )
 
 ::------------------------------------------------------------
