@@ -31,22 +31,6 @@ It applies useful **system tweaks**, **disables telemetry**, **removes OneDrive*
 - Prevents automatic restarts after updates  
 - Excludes driver updates from Windows Update  
 
-### 🧰 Software Installation (via Winget)
-Automatically installs the following software:
-
-| Category | Applications |
-|----------|---------------|
-| Browsers | Brave |
-| Developer Tools | PowerShell, Visual Studio Code, Node.js, Python 3.14 |
-| Utilities | 7zip, Notepad++, SpaceSniffer, Fastfetch |
-| Media | VLC, Audacity |
-| Gaming | Steam, Epic Games Launcher, EA Desktop, ATLauncher, League of Legends |
-| System | HWiNFO, Logitech G HUB, SoundSwitch |
-| Communication | Discord |
-| Graphics | Paint.NET |
-
----
-
 ## 🧾 Requirements
 
 - **Windows 10 or Windows 11**  
