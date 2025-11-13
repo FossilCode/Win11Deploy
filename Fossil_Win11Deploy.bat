@@ -117,7 +117,7 @@ FOR %%A IN (
     AntoineAflalo.SoundSwitch
 ) DO (
     ECHO Installing %%A...
-    winget install %%A --accept-package-agreements --accept-source-agreements -h
+    winget install %%A --accept-package-agreements --accept-source-agreements --scope machine -h
 )
 
 ::------------------------------------------------------------
@@ -129,3 +129,4 @@ ECHO      All tasks completed successfully! Enjoy your system.
 ECHO --------------------------------------------------------------
 ECHO.
 PAUSE
+
