@@ -1,48 +1,62 @@
-# 🪟 Windows Post-Install Setup & Configuration Utility
+# Windows Post-Install Setup Utility
 
-A **Windows 10/11 automation script** that streamlines your post-install setup.  
-It applies useful **system tweaks**, **disables telemetry**, **removes OneDrive**, and **installs essential software** using **Winget** — all in one go.
-
----
-
-## ⚙️ Features
-
-### 🧩 System Tweaks
-- Enables hidden files and file extensions in Explorer  
-- Disables window shaking, startup delay, and recent/frequent items  
-- Disables Cortana and Bing integration in Windows Search  
-- Removes Windows Copilot and disables transparency effects  
-- Disables lock screen and Windows Error Reporting  
-- Reduces animation and menu delay for a snappier UI  
-
-### 🛡️ Privacy & Telemetry
-- Disables telemetry and data collection  
-- Turns off tailored experiences and content suggestions  
-- Blocks silent app installs and OEM bloatware recommendations  
-
-### ☁️ OneDrive Removal
-- Terminates OneDrive processes  
-- Uninstalls OneDrive (both 32-bit and 64-bit versions)  
-- Removes leftover folders and registry traces  
-- Unpins OneDrive from File Explorer  
-
-### 🚀 Performance
-- Disables background apps globally  
-- Prevents automatic restarts after updates  
-- Excludes driver updates from Windows Update  
-
-## 🧾 Requirements
-
-- **Windows 10 or Windows 11**  
-- **Administrator privileges**  
-- **Winget** must be installed (included by default in Windows 10 22H2+ and Windows 11)  
-- Windows should be **up-to-date** before running
+Automated setup scripts for Windows 10 and Windows 11.  
+Applies system tweaks, disables telemetry, removes OneDrive, and installs apps via Winget.
 
 ---
 
-## 🚀 Usage
+## Scripts
 
-1. **Download the script**  
-   ```bash
-   git clone https://github.com/<yourusername>/windows-setup-utility.git
-   cd windows-setup-utility
+- **`Double_Win10Deploy.bat`** – Windows 10 setup
+- **`Fossil_Win11Deploy.bat`** – Windows 11 setup
+
+Both follow the same safe execution order and structure.
+
+---
+
+## What It Does
+
+**1. Windows Update Check**  
+Triggers Windows Update to ensure system is current before proceeding.
+
+**2. Registry Tweaks**  
+- File Explorer: Show hidden files, remove recent/frequent items
+- Privacy & Telemetry: Disable data collection and ads
+- Search & Cortana: Disable Cortana, Bing search, taskbar search
+- UI & Theme: Dark theme, disable Copilot, remove animations
+- Performance: Disable background apps
+- Windows Update: Prevent auto-restart, exclude driver updates
+- *Win11 only: Disable lock screen and error reporting*
+
+**3. OneDrive Removal**  
+Kill process, uninstall, remove folders and registry entries, unpin from Explorer.
+
+**4. Software Installation**  
+Installs apps via Winget (Brave, VS Code, Python, Steam, Discord, etc.)  
+*Win11 includes: Paint.NET, ATLauncher, qBittorrent, SoundSwitch*
+
+---
+
+## Requirements
+
+- Windows 10 (22H2+) or Windows 11
+- Administrator privileges
+- Winget (included in modern Windows versions)
+
+---
+
+## How to Run
+
+1. Right-click the `.bat` file → **Run as administrator**
+2. Wait for completion (takes 10–20 minutes depending on internet speed)
+
+**Note:** Script will pause if it encounters an error. Check the console for details.
+
+---
+
+## Safety
+
+- Registry changes are safe and reversible
+- All changes are user-scoped (HKCU) except OneDrive and Policies
+- OneDrive removal is the most invasive step; back up data first if needed
+- Script runs in admin mode and requires confirmation to start
