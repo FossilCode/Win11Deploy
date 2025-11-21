@@ -88,6 +88,18 @@ ECHO Registry tweaks applied.
 ECHO.
 
 :: ============================================================
+:: DNS Configuration
+:: ============================================================
+ECHO Configuring DNS servers to 1.1.1.1 and 8.8.8.8 for Ethernet and Wi-Fi.
+netsh interface ip set dns name="Ethernet" source=static addr=1.1.1.1 2>nul
+netsh interface ip add dns name="Ethernet" addr=8.8.8.8 index=2 2>nul
+
+netsh interface ip set dns name="Wi-Fi" source=static addr=1.1.1.1 2>nul
+netsh interface ip add dns name="Wi-Fi" addr=8.8.8.8 index=2 2>nul
+ECHO DNS servers set successfully.
+ECHO.
+
+:: ============================================================
 :: OneDrive Removal
 :: ============================================================
 ECHO Disabling and removing OneDrive...
@@ -130,8 +142,6 @@ FOR %%A IN (
     Discord.Discord
     Notepad++
     SpaceSniffer
-    EpicGamesLauncher
-    EADesktop
     ATLauncher
     qBittorrent.qBittorrent
     AntoineAflalo.SoundSwitch
